@@ -1,0 +1,3 @@
+rootProject.name='Kog'
+include ':app'
+include ':kog'
