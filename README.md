@@ -17,7 +17,7 @@ Add the dependency in your app's build.gradle
 ## Usage
 
 
-    ```kotlin
+```kotlin
     // Before starting your first log, you must initialize a global Kog instance
     
     // init global Kog instance with default settings
@@ -42,7 +42,6 @@ Add the dependency in your app's build.gradle
     val kog = Kog.new {
         default() // Apply the default settings which will log all message using Android Logcat
     }
-    ```
     
     // Write your own implementation
     Kog.configure {
@@ -72,3 +71,4 @@ Add the dependency in your app's build.gradle
             kog.d("Init") // will log using "Test" tag
         }
     }
+```
