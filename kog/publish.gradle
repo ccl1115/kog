@@ -1,7 +1,7 @@
 apply plugin: 'com.jfrog.bintray'
 
 group 'com.simonslair.kog'
-version '1.0'
+version '1.0.1'
 
 project.ext {
     mavGitUrl = 'https://github.com/ccl1115/kog.git'
@@ -15,10 +15,27 @@ project.ext {
 def properties = new Properties()
 properties.load(new FileInputStream("local.properties"))
 
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                from components.release
+
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.simonslair.kog'
+                artifactId = 'kog'
+                version = '1.0.1'
+            }
+        }
+    }
+}
+
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
-    publications = ['Production']
+    publications = ['release']
     configurations = ['archives']
     override = true
     pkg {
