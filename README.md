@@ -11,11 +11,10 @@ Another Android log library written by Kotlin
 Add the dependency in your app's build.gradle
 
     dependencies {
-        implementation 'com.simonslair.kog:kog-android:1.0'
+        implementation 'com.simonslair.kog:kog:$latest-version'
     }
 
 ## Usage
-
 
 ```kotlin
     // Before starting your first log, you must initialize a global Kog instance
