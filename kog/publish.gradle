@@ -22,8 +22,9 @@ bintray {
     configurations = ['archives']
     override = true
     pkg {
-        repo = 'maven'
+        repo = 'simonslair'
         name = 'Kog'
+        userOrg = 'simonslair'
         description = "Another Android Log Library written by kotlin"
         publicDownloadNumbers = true
         licenses = ['Apache-2.0']
